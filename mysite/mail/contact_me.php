@@ -1,6 +1,7 @@
 <?php
 require("class.phpmailer.php");
 require("class.smtp.php");
+require("credentials.php");
 
 // Check for empty fields
 if(empty($_POST['name'])  		||
@@ -19,9 +20,9 @@ $phone = strip_tags(htmlspecialchars($_POST['phone']));
 $message = strip_tags(htmlspecialchars($_POST['message']));
 
 // Datos de la cuenta de correo utilizada para enviar vía SMTP
-$smtpHost = "mail.matiasromero.com.ar";  // Dominio alternativo brindado en el email de alta 
-$smtpUsuario = "me@matiasromero.com.ar";  // Mi cuenta de correo
-$smtpClave = "Mati1987";  // Mi contraseña
+$smtpHost = $smtpHostName;  // Dominio alternativo brindado en el email de alta 
+$smtpUsuario = $smtpUserName;  // Mi cuenta de correo
+$smtpClave = $smtpPassword;  // Mi contraseña
 // Email donde se enviaran los datos cargados en el formulario de contacto
 $emailDestino = "me@matiasromero.com.ar";
 
